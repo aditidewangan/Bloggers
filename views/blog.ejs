@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+
+<h1>BLOG</h1>
+
+<form action="/blog" method="GET" class="form-inline">
+  <div class="form-group feature">
+  <input type="text" name="search" class="form-control" placeholder="Search Blog...">
+  <input class="btn btn-secondary feat" type="submit" value="Search">
+  </div>
+</form>
+
+<% posts.forEach(function(post){ %>
+
+<form action="/delete" method="post">
+  <div class="box">
+    <h3><%=post.title%></h3>
+    <p>
+      <%=post.content.substring(0,100) + " ..."%>
+      <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+  </div>
+</form>
+
+<% }) %>
+
+
+
+<%- include("partials/footer"); -%>
