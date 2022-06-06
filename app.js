@@ -169,7 +169,7 @@ app.post("/contact", function(req,res){
 
 contact.save(function(err){
   if(!err){
-    res.status(201).render("contact");
+    res.status(201).redirect("/blog");
     }
   });
 });
